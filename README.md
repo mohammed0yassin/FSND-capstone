@@ -131,7 +131,7 @@ https://cs-agency.herokuapp.com/
 
 ```
 
-### Running Tests (Unittests)
+## Running Tests (Unittests)
 
 Setup the test database
 
@@ -180,6 +180,17 @@ For ease you could run `database_setup.sh` script which will drop, create then p
 ./database_setup.sh
 
 ```
+`database_setup.sh` has the following commands
+
+```script
+#!/bin/bash
+
+PGPASSWORD=mypassword dropdb -U postgres agency_test
+PGPASSWORD=mypassword createdb -U postgres agency_test
+PGPASSWORD=mypassword psql -U postgres -d agency_test -1 -f agency.psql 1>&1 | grep nothing # grep to mute output
+```
+
+
 
 Run tests against local testing database
 
@@ -188,9 +199,9 @@ Run tests against local testing database
 python test_app.py
 
 ```
-### Running Tests using Postman
+## Running Tests using Postman
 
-#### Test locally:
+### Test locally:
 >Import the postman collection `Casting-Agency.postman_collection.json`
 >
 >Restore backup to the `agency_test` database
@@ -209,12 +220,12 @@ python test_app.py
 >
 >PGPASSWORD=mypassword dropdb -U postgres agency_test
 >PGPASSWORD=mypassword createdb -U postgres agency_test
->PGPASSWORD=mypassword psql -U postgres -d agency_test -1 -f agency.psql 1>&1 | >grep nothing # grep to mute output
+>PGPASSWORD=mypassword psql -U postgres -d agency_test -1 -f agency.psql 1>&1 | grep nothing # grep to mute output
 >```
 
 
 
-#### Test on the production server:
+### Test on the production server:
 
 >Import the postman collection `Casting-Agency-Heroku.postman_collection.json`
 >
