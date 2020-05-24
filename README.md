@@ -1,10 +1,699 @@
-Tokens:
---------
 
-- Executive Producer:
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdOY1V5aEhHYi1aeHJNNkxmdkVPWCJ9.eyJpc3MiOiJodHRwczovL2NzLWFnZW5jeS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVjNmFkNDY2MGViMzUwYzcwMTRlN2U0IiwiYXVkIjoiYWdlbmN5IiwiaWF0IjoxNTkwMTg0NTM5LCJleHAiOjE1OTAyNzA5MzksImF6cCI6IlhsT3U0TkcwdHJQbUtTazJRN0JhMm4zY1hHU2Y4VnF6Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImRlbGV0ZTpzaG93cyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyIsInBvc3Q6c2hvd3MiXX0.JTlwbMZUGv4BLqfoNYsfNhYsCW-kTUzJcCmfUDqELRTUmOHd-I_k1HFkU56itzdHnwoN9Md2Eext0Oof80Lzb7sFDNJnAluYLOuk5YZbMGAUMcvuzzcHlaADds4uGQ6e9qX6mvPCiJB54asuByL61HL4da4t4pu1DqqcC2ECxKU8S5JojzgkPk-6RB8Tn1A_wEa0IsptxzENzkzgb22711jOcICveliDF-MtlSbiiV9sl5dNb9OGDSjoq1wMj7aoo3-f-h_GMmypf5EXk8cXLPoGq00wC76yvdDU8jrdMeOFpP6N4kBCkM_skuxttizi1ZyxN47n-w4D5PPY4dTXbA
-- Casting Director:
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdOY1V5aEhHYi1aeHJNNkxmdkVPWCJ9.eyJpc3MiOiJodHRwczovL2NzLWFnZW5jeS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVjNmFkMjk1YTU5MTAwZWFmYWRhMzhlIiwiYXVkIjoiYWdlbmN5IiwiaWF0IjoxNTkwMTgxOTAyLCJleHAiOjE1OTAyNjgzMDIsImF6cCI6IlhsT3U0TkcwdHJQbUtTazJRN0JhMm4zY1hHU2Y4VnF6Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyJdfQ.xIG3tO8OOcERDkKAVDty2bIzz9T2MZMbkps5MPX_jBvNnpsg5P70hQQx5pzempg2tkdmh-DfXVISWxpZErQMGJ0g5slktpnV40Xn1yN0DMemsaeKHLcJfz2gHJ3wufonRzbyjip8fvs3zo1GBECKdRKdAKt-jshR9Z2XSgo3kFoAEFJcp6FxGBGyQi0xzYBEL_NIzFZzDsJejPsyK2iQVi00-btXcKM2JoskCjy9s-Wxdcnb5i0Ohkqel_KqkI6eHhz4ONIVy43W6NgEIKiiEaYvNqsDkQIHz_-zkgA4knEeP_ZnCHXd1arTw9m3BoMtvt820AwJL3rmwdnTI02_mA
+# FSND Capstone Project: Casting Agency API
 
-- Casting Assistant
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdOY1V5aEhHYi1aeHJNNkxmdkVPWCJ9.eyJpc3MiOiJodHRwczovL2NzLWFnZW5jeS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVjNmFjYzM2MGViMzUwYzcwMTRlNWRjIiwiYXVkIjoiYWdlbmN5IiwiaWF0IjoxNTkwMTgxODQyLCJleHAiOjE1OTAyNjgyNDIsImF6cCI6IlhsT3U0TkcwdHJQbUtTazJRN0JhMm4zY1hHU2Y4VnF6Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.PUa9kjHUaf665gfIF1XxA0D_xvkPBv654XtGHjDf9g5quHC5l_JSN6b0qL_cZSYDmA3ub0r2yF2xcfYORWrB_257WOJIKaHG-BYkf9CNS5N6viZOXWc35V_wyIojfzfr1pXXweYYiyo77KraChVJdWpt8FUC0pCzCH0ovCW15_cCk5zSfRmTPvvmtv08jymjgFR7DUlVkgaHfZk295uu7iyjKgaeeKpXbNt80IiOk5EGC7dsEddQ1DcaQnPjdctogmnmvdSyKwcIPeJgVKqXaKkDzuVyxDX7uITU5TfRo0xV8JrfEBSZ9jN9BgV1B31lh7QIZZLbibt8PLK_mW-krw
+  
+
+## Getting Started
+
+  
+
+### Installing Dependencies
+
+  
+
+#### Python 3.8.2
+
+  
+
+Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+
+  
+
+#### Virtual Enviornment
+
+  
+
+We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+
+  
+
+#### PIP Dependencies
+
+  
+
+Once you have your virtual environment setup and running, install dependencies by running:
+
+  
+
+```bash
+
+pip install -r requirements.txt
+
+```
+
+  
+
+## Running the server
+
+  
+
+### Locally
+
+  
+
+Setup the data base
+
+  
+
+```shell
+
+createdb agency
+
+```
+
+Populate the database with data from `agency.psql`
+
+```shell
+
+PGPASSWORD=mypassword psql -U postgres -d agency -1 -f agency.psql
+
+```
+
+  
+
+From within this directory first ensure you are working using your created virtual environment.
+
+  
+
+Each time you open a new terminal session, run:
+
+  
+
+```bash
+
+source setup.sh
+
+```
+
+Which will have all the required environment variables to run the app locally
+
+Some of `setup.sh` variables:
+
+```bash
+
+export FLASK_APP=app.py
+
+export FLASK_ENV=development
+
+```
+
+  
+  
+
+To run the server, execute:
+
+  
+
+```bash
+
+flask run
+
+```
+
+The app will be running on:
+
+```txt
+
+http://127.0.0.1:5000/
+
+```
+
+  
+  
+
+### The app is also running on the Production Server
+
+  
+
+```txt
+
+https://cs-agency.herokuapp.com/
+
+```
+
+### Running Tests (Unittests)
+
+Setup the test database
+
+```shell
+
+createdb agency_test
+
+```
+
+Populate the database with data from `agency.psql`
+
+```shell
+
+PGPASSWORD=mypassword psql -U postgres -d agency_test -1 -f agency.psql
+
+```
+
+  
+
+Each time you open a new terminal session, run:
+
+  
+
+```bash
+
+source setup.sh
+
+```
+
+Which will have all the required environment variables to run the app locally
+
+  
+
+Currently for review purposes the following tokens are also set via environment variables, and provided in the `setup.sh` configuration:
+
+-  `exec_producer_token`
+
+-  `casting_director_token`
+
+-  `casting_assistant_token`
+
+For ease you could run `database_setup.sh` script which will drop, create then populate the database each time before you run the test.
+
+```shell
+
+./database_setup.sh
+
+```
+
+Run tests against local testing database
+
+```shell
+
+python test_app.py
+
+```
+### Running Tests using Postman
+
+#### Test locally:
+>Import the postman collection `Casting-Agency.postman_collection.json`
+>
+>Restore backup to the `agency_test` database
+>
+>For ease you could run `database_setup.sh` script which will drop, create then >populate the database each time before you run the collection.
+>
+>```shell
+>
+>./database_setup.sh
+>
+>```
+>`database_setup.sh` has the following commands
+>
+>```script
+>#!/bin/bash
+>
+>PGPASSWORD=mypassword dropdb -U postgres agency_test
+>PGPASSWORD=mypassword createdb -U postgres agency_test
+>PGPASSWORD=mypassword psql -U postgres -d agency_test -1 -f agency.psql 1>&1 | >grep nothing # grep to mute output
+>```
+
+
+
+#### Test on the production server:
+
+>Import the postman collection `Casting-Agency-Heroku.postman_collection.json`
+>
+>Restore the database on the Heroku server using
+>
+>```shell
+>heroku pg:backups:restore b002 DATABASE_URL --app cs-agency --confirm cs-agency
+>```
+>**Note** The backup requires Heroku login credentials 
+
+
+
+## All Available Endpoints
+| Endpoints | Details | Required Permission |
+|--|--|--|
+| GET '/shows' | A public endpoint for anyone to view the shows of the agency | None |
+| GET '/actors'| An endpoint to view the actors of the agency| get:actors |
+| GET '/movies'| An endpoint to view the movies of the agency| get:movies |
+| POST '/actors' | An endpoint that adds a new actor | post:actors |
+| POST '/movies' | An endpoint that adds a new movie | post:movies |
+| POST '/shows' | An end point to add a new show | post:shows |
+| PATCH '/actors/`<id>`' | An endpoint to edit an actor| patch:actors |
+| PATCH '/movies/`<id>`' | An endpoint to edit a movie| patch:movies |
+| DELETE '/actors/`<id>`' | An endpoint to delete an actor | delete:actors |
+| DELETE '/movies/`<id>`' | An endpoint to delete an movie | delete:movies |
+|DELETE '/shows/`<movie_id>`'| An endpoint to delete a show using its movie_id | delete:shows |
+|--|--|--|
+
+## Roles and their permissions
+
+| Role | Permissions |
+|--|--|
+| Executive Producer | `post:shows` `post:movies` `post:actors` `patch:movies` `patch:actors` `get:movies` `get:actors` `delete:shows` `delete:movies` `delete:actors`|
+| Casting Director | `post:actors` `patch:movies` `patch:actors` `get:movies` `get:actors` `delete:actors`|
+| Casting Assistant | `get:movies` `get:actors`|
+
+## Endpoints
+
+#### GET '/shows' 
+> - Fetchs a list of shows
+> - Returns `JSON` containing all available shows
+>```json
+>>   {
+>    "shows": [
+>        {
+>            "Actors": [
+>                {
+>                    "age": 20,
+>                    "gender": "Male",
+>                    "id": 1,
+>                    "name": "Mohammed"
+>                },
+>                {
+>                    "age": 20,
+>                    "gender": "Female",
+>                    "id": 2,
+>                    "name": "Nadine"
+>                }
+>            ],
+>            "movie_id": 1,
+>            "movie_title": "Rise of the APIs",
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT"
+>        },
+>        {
+>            "Actors": [
+>                {
+>                    "age": 26,
+>                    "gender": "Male",
+>                    "id": 3,
+>                    "name": "Jack"
+>                },
+>                {
+>                    "age": 23,
+>                    "gender": "Male",
+>                    "id": 4,
+>                    "name": "Will"
+>                },
+>                {
+>                    "age": 27,
+>                    "gender": "Female",
+>                    "id": 5,
+>                    "name": "Scarlet"
+>                }
+>            ],
+>            "movie_id": 2,
+>            "movie_title": "The New Upcoming Movie",
+>            "release_date": "Mon, 21 Sep 2020 21:30:00 GMT"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+### GET '/actors'
+>- Fetchs a list of all actors with their details
+>- Returns `JSON` containing actors details
+>```json
+>{
+>    "actors": [
+>        {
+>            "age": 20,
+>            "gender": "Male",
+>            "id": 1,
+>            "name": "Mohammed"
+>        },
+>        {
+>            "age": 20,
+>            "gender": "Female",
+>            "id": 2,
+>            "name": "Nadine"
+>        },
+>        {
+>            "age": 26,
+>            "gender": "Male",
+>            "id": 3,
+>            "name": "Jack"
+>        },
+>        {
+>            "age": 23,
+>            "gender": "Male",
+>            "id": 4,
+>            "name": "Will"
+>        },
+>        {
+>            "age": 27,
+>            "gender": "Female",
+>            "id": 5,
+>            "name": "Scarlet"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+### GET '/movies'
+>- Fetches a list of movies
+>- Returns a list of movies and their details
+>```json
+>{
+>    "movies": [
+>        {
+>            "id": 1,
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT",
+>            "title": "Rise of the APIs"
+>        },
+>        {
+>            "id": 2,
+>            "release_date": "Mon, 21 Sep 2020 21:30:00 GMT",
+>            "title": "The New Upcoming Movie"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+
+### POST '/actors'
+>- Adds a new actor
+>- Returns a list of actors details including the newly added actor
+>```json
+>{
+>    "actors": [
+>        {
+>            "age": 20,
+>            "gender": "Male",
+>            "id": 1,
+>            "name": "Mohammed"
+>        },
+>        {
+>            "age": 20,
+>            "gender": "Female",
+>            "id": 2,
+>            "name": "Nadine"
+>        },
+>        {
+>            "age": 26,
+>            "gender": "Male",
+>            "id": 3,
+>            "name": "Jack"
+>        },
+>        {
+>            "age": 23,
+>            "gender": "Male",
+>            "id": 4,
+>            "name": "Will"
+>        },
+>        {
+>            "age": 27,
+>            "gender": "Female",
+>            "id": 5,
+>            "name": "Scarlet"
+>        },
+>        {
+>            "age": 22,
+>            "gender": "Male",
+>            "id": 6,
+>            "name": "POST Actor"
+>        }
+>    ],
+>    "success": true
+>}
+>``` 
+
+### POST '/movies'
+>- Adds a new movie
+>- Returns a list of movies including the newly added movie
+>```json
+>    {
+>    "movies": [
+>        {
+>            "id": 1,
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT",
+>            "title": "Rise of the APIs"
+>        },
+>        {
+>            "id": 2,
+>            "release_date": "Mon, 21 Sep 2020 21:30:00 GMT",
+>            "title": "The New Upcoming Movie"
+>        },
+>        {
+>            "id": 3,
+>            "release_date": "Wed, 15 Jan 2025 15:30:00 GMT",
+>            "title": "POST Movie"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+### POST '/shows
+>- Adds a new show
+>- Returns a list of shows including the newly added show
+>```json
+>{
+>    "shows": [
+>        {
+>            "Actors": [
+>                {
+>                    "age": 20,
+>                    "gender": "Male",
+>                    "id": 1,
+>                    "name": "Mohammed"
+>                },
+>                {
+>                    "age": 20,
+>                    "gender": "Female",
+>                    "id": 2,
+>                    "name": "Nadine"
+>                }
+>            ],
+>            "movie_id": 1,
+>            "movie_title": "Rise of the APIs",
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT"
+>        },
+>        {
+>            "Actors": [
+>                {
+>                    "age": 26,
+>                    "gender": "Male",
+>                    "id": 3,
+>                    "name": "Jack"
+>                },
+>                {
+>                    "age": 23,
+>                    "gender": "Male",
+>                    "id": 4,
+>                    "name": "Will"
+>                },
+>                {
+>                    "age": 27,
+>                    "gender": "Female",
+>                    "id": 5,
+>                    "name": "Scarlet"
+>                }
+>            ],
+>            "movie_id": 2,
+>            "movie_title": "The New Upcoming Movie",
+>            "release_date": "Mon, 21 Sep 2020 21:30:00 GMT"
+>        },
+>        {
+>            "Actors": [
+>                {
+>                    "age": 26,
+>                    "gender": "Male",
+>                    "id": 3,
+>                    "name": "Jack"
+>                },
+>                {
+>                    "age": 22,
+>                    "gender": "Male",
+>                    "id": 6,
+>                    "name": "POST Actor"
+>                }
+>            ],
+>            "movie_id": 3,
+>            "movie_title": "POST Movie",
+>            "release_date": "Wed, 15 Jan 2025 15:30:00 GMT"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+>### PATCH '/actors/`<id>`'
+>- Edits desired attributes of an actor
+>- Returns a list containg all actors including the edited actor
+>```json
+>{
+>    "actors": [
+>        {
+>            "age": 20,
+>            "gender": "Male",
+>            "id": 1,
+>            "name": "Mohammed"
+>        },
+>        {
+>            "age": 20,
+>            "gender": "Female",
+>            "id": 2,
+>            "name": "Nadine"
+>        },
+>        {
+>            "age": 26,
+>            "gender": "Male",
+>            "id": 3,
+>            "name": "Jack"
+>        },
+>        {
+>            "age": 23,
+>            "gender": "Male",
+>            "id": 4,
+>            "name": "Will"
+>        },
+>        {
+>            "age": 27,
+>            "gender": "Female",
+>            "id": 5,
+>            "name": "Scarlet"
+>        },
+>        {
+>            "age": 22,
+>            "gender": "Male",
+>            "id": 7,
+>            "name": "POST Actor"
+>        },
+>        {
+>            "age": 30,
+>            "gender": "Male",
+>            "id": 6,
+>            "name": "EDITED Actor"
+>        }
+>    ],
+>    "edited": "6",
+>    "success": true
+>}
+>```
+
+### PATCH '/movies/`<id>`'
+>- Adds a new movie
+>- Args: the `id` of the movie
+>- Returns a list of movies including the edited movie
+>```json
+>{
+>    "edited": "3",
+>    "movies": [
+>        {
+>            "id": 1,
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT",
+>            "title": "Rise of the APIs"
+>        },
+>        {
+>            "id": 2,
+>            "release_date": "Mon, 21 Sep 2020 21:30:00 GMT",
+>            "title": "The New Upcoming Movie"
+>        },
+>        {
+>            "id": 3,
+>            "release_date": "Wed, 15 Jan 2025 15:30:00 GMT",
+>            "title": "EDITED Title 2"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+### DELETE '/actors/`<id>`'
+>- Deletes an actor 
+>- Args: The `id` of the actor
+>- Returns the new list of actors after deleteing the selected actor
+>```json
+>{
+>    "actors": [
+>        {
+>            "age": 20,
+>            "gender": "Male",
+>            "id": 1,
+>            "name": "Mohammed"
+>        },
+>        {
+>            "age": 20,
+>            "gender": "Female",
+>            "id": 2,
+>            "name": "Nadine"
+>        },
+>        {
+>            "age": 26,
+>            "gender": "Male",
+>            "id": 3,
+>            "name": "Jack"
+>        },
+>        {
+>            "age": 23,
+>            "gender": "Male",
+>            "id": 4,
+>            "name": "Will"
+>        },
+>        {
+>            "age": 27,
+>            "gender": "Female",
+>            "id": 5,
+>            "name": "Scarlet"
+>        }
+>    ],
+>    "deleted": "6",
+>    "success": true
+>}
+>```
+
+### DELETE '/movies/`<id>`'
+>- Deletes a movie 
+>- Args: The `id` of the movie
+>- Returns the new list of movies after deleteing the selected movies
+>```json
+>{
+>    "deleted": "3",
+>    "movies": [
+>        {
+>            "id": 1,
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT",
+>            "title": "Rise of the APIs"
+>        },
+>        {
+>            "id": 2,
+>            "release_date": "Mon, 21 Sep 2020 21:30:00 GMT",
+>            "title": "The New Upcoming Movie"
+>        }
+>    ],
+>    "success": true
+>}
+>```
+
+### DELETE '/shows/`<movie_id>`'
+>- Deletes a show using its `movie_id`
+>- Args: The `movie_id` which is the id of the movie in the desired show to be >deleted
+>- Returns the new list of the shows after deleting the desired show.
+>```json
+>{
+>    "deleted": "2",
+>    "shows": [
+>        {
+>            "Actors": [
+>                {
+>                    "age": 20,
+>                    "gender": "Male",
+>                    "id": 1,
+>                    "name": "Mohammed"
+>                },
+>                {
+>                    "age": 20,
+>                    "gender": "Female",
+>                    "id": 2,
+>                    "name": "Nadine"
+>                }
+>            ],
+>            "movie_id": 1,
+>            "movie_title": "Rise of the APIs",
+>            "release_date": "Sun, 11 Apr 2021 21:30:00 GMT"
+>        }
+>    ],
+>    "success": true
+>}
+>```
