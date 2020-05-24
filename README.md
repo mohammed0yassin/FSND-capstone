@@ -1,6 +1,22 @@
 
 # FSND Capstone Project: Casting Agency API
 
+## Full Stack Casting Agency
+
+This is the final project of `Udacity Full Stack Web Developer Nanodegree` 
+
+The Project is the backend of a Casting Agency Company that hires actors and produce movies.
+
+There are different roles with different permissions for people who work in the agency.
+
+
+The Project Contains:
+- Database modeling with PostgreSQL & SQLAlchemy
+- APIs to performance CRUD Operations on database with Flask
+- Automated testing with Unittest
+- Automatad testing with Postman
+- Authorization & Role based authentication control with Auth0 
+- Web server deployment on Heroku
   
 
 ## Getting Started
