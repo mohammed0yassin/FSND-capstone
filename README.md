@@ -258,17 +258,16 @@ python test_app.py
 | Endpoints | Details | Required Permission |
 |--|--|--|
 | GET '/shows' | A public endpoint for anyone to view the shows of the agency | None |
-| GET '/actors'| An endpoint to view the actors of the agency| get:actors |
-| GET '/movies'| An endpoint to view the movies of the agency| get:movies |
-| POST '/actors' | An endpoint that adds a new actor | post:actors |
-| POST '/movies' | An endpoint that adds a new movie | post:movies |
-| POST '/shows' | An end point to add a new show | post:shows |
-| PATCH '/actors/`<id>`' | An endpoint to edit an actor| patch:actors |
-| PATCH '/movies/`<id>`' | An endpoint to edit a movie| patch:movies |
-| DELETE '/actors/`<id>`' | An endpoint to delete an actor | delete:actors |
-| DELETE '/movies/`<id>`' | An endpoint to delete an movie | delete:movies |
-|DELETE '/shows/`<movie_id>`'| An endpoint to delete a show using its movie_id | delete:shows |
-|--|--|--|
+| GET '/actors'| An endpoint to view the actors of the agency| `get:actors` |
+| GET '/movies'| An endpoint to view the movies of the agency| `get:movies` |
+| POST '/actors' | An endpoint that adds a new actor | `post:actors` |
+| POST '/movies' | An endpoint that adds a new movie | `post:movies` |
+| POST '/shows' | An end point to add a new show | `post:shows` |
+| PATCH '/actors/`<id>`' | An endpoint to edit an actor| `patch:actors` |
+| PATCH '/movies/`<id>`' | An endpoint to edit a movie| `patch:movies` |
+| DELETE '/actors/`<id>`' | An endpoint to delete an actor | `delete:actors` |
+| DELETE '/movies/`<id>`' | An endpoint to delete an movie | `delete:movies` |
+|DELETE '/shows/`<movie_id>`'| An endpoint to delete a show using its movie_id | `delete:shows` |
 
 ## Roles and their permissions
 
